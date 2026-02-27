@@ -1,7 +1,11 @@
 package main
 
-import "fmt"
+import "github.com/spenserblack/boop/pkg/boop"
 
 func main() {
-	fmt.Println("Hello, world!")
+	boop := boop.New()
+	boop.Executable(true)
+	if err := boop.Boop("deeply/nested/file"); err != nil {
+		panic(err)
+	}
 }
