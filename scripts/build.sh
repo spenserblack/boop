@@ -7,9 +7,12 @@ for platform in $PLATFORMS; do
 	echo "Building for $platform"
 	goos="$(echo "$platform" | cut -d - -f 1)"
 	goarch="$(echo "$platform" | cut -d - -f 2)"
-	output="$DIST_DIR/boop-$platform"
+	filename="boop-$platform"
 	if [ "$goos" = "windows" ]; then
-		output="$output.exe"
+		filename="$filename.exe"
 	fi
-	GOOS="$goos" GOARCH="$goarch" go build -o "$output" "$BASE_DIR/boop.go"
+	target="$DIST_DIR/$filename"
+	GOOS="$goos" GOARCH="$goarch" go build -o "$target" "$BASE_DIR/boop.go"
+
+	tar -C "$DIST_DIR" --remove-files -czf "$DIST_DIR/$filename.tar.gz" "$filename"
 done
