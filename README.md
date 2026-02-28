@@ -39,3 +39,13 @@ boop -x deeply/nested/file
 ```shell
 go install github.com/spenserblack/boop@latest
 ```
+
+### From GitHub releases
+
+#### Unix
+
+*You may need to call `sudo sh` instead.*
+
+```shell
+curl -fsSL https://github.com/spenserblack/boop/raw/refs/heads/main/scripts/install-from-gh.sh | sh
+```
