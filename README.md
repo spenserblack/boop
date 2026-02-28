@@ -9,3 +9,22 @@ series of commands that *include* `touch` into just one command.
   will create a directory.
 - Set execute permissions when creating a file (does nothing on Windows).
 - Create any parent directories that the filepath needs.
+
+## Example
+
+### Before
+
+```shell
+# Ensure the containing directory exists
+mkdir -p deeply/nested
+# Create the empty file
+touch deeply/nested/file
+# Make the created file executable
+chmod +x deeply/nested/file
+```
+
+### After
+
+```shell
+boop -x deeply/nested/file
+```
