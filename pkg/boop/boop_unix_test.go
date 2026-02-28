@@ -1,4 +1,5 @@
 //go:build unix
+
 package boop
 
 import "testing"

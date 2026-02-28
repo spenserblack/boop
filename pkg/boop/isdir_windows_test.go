@@ -4,24 +4,24 @@ import "testing"
 
 func TestIsDir(t *testing.T) {
 	tests := []struct {
-		name string
+		name   string
 		target string
-		want bool
+		want   bool
 	}{
 		{
-			name: "trailing /",
+			name:   "trailing /",
 			target: "foo/",
-			want: true,
+			want:   true,
 		},
 		{
-			name: "no trailing slash",
+			name:   "no trailing slash",
 			target: "foo",
-			want: false,
+			want:   false,
 		},
 		{
-			name: `trailing \`,
+			name:   `trailing \`,
 			target: `foo\`,
-			want: true,
+			want:   true,
 		},
 	}
 
