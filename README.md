@@ -31,3 +31,11 @@ chmod +x deeply/nested/file
 ```shell
 boop -x deeply/nested/file
 ```
+
+## Installation
+
+### With `go install`
+
+```shell
+go install github.com/spenserblack/boop@latest
+```
