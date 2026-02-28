@@ -47,7 +47,11 @@ func (boop boop) Boop(name string) error {
 	// NOTE If the file already existed, OpenFile would not set the execute permission.
 	// TODO Avoid redundancy by catching an already exists error and using that as a hint
 	//		to set permissions.
-	err = addExecutablePerm(f)
+	if boop.executable {
+		if err := addExecutablePerm(f); err != nil {
+			return err
+		}
+	}
 
-	return err
+	return nil
 }
