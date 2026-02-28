@@ -1,5 +1,8 @@
 # `boop`
 
+[![CI](https://github.com/spenserblack/boop/actions/workflows/ci.yml/badge.svg)](https://github.com/spenserblack/boop/actions/workflows/ci.yml)
+[![Go Report Card](https://goreportcard.com/badge/github.com/spenserblack/boop)](https://goreportcard.com/report/github.com/spenserblack/boop)
+
 `touch` is officially used to update timestamps for files. But it's often used to create
 empty files. `boop` was inspired by *that* usage, and adds a bit more functionality for
 creating new files. It is not intended to completely replace `touch`, but help reduce
