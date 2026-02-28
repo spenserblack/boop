@@ -1,5 +1,6 @@
 #!/bin/sh
-BASE_DIR="$(dirname "$(dirname "$0")")"
+SCRIPT_DIR="$(dirname "$0")"
+BASE_DIR="$(dirname "$SCRIPT_DIR")"
 DIST_DIR="$BASE_DIR/dist"
 echo "Building to $DIST_DIR"
 PLATFORMS="darwin-arm64 linux-amd64 windows-amd64"
