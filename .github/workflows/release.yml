@@ -1,0 +1,22 @@
+name: Draft release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  release:
+    name: Draft release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v6
+      - name: Set up Go
+        uses: actions/setup-go@v6
+        with:
+          go-version-file: 'go.mod'
+      - name: Run release script
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: ./scripts/release.sh
