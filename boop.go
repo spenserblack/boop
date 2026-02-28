@@ -1,11 +1,15 @@
 package main
 
-import "github.com/spenserblack/boop/pkg/boop"
+import (
+	"fmt"
+	"os"
+
+	"github.com/spenserblack/boop/cmd"
+)
 
 func main() {
-	boop := boop.New()
-	boop.Executable(true)
-	if err := boop.Boop("deeply/nested/file"); err != nil {
-		panic(err)
+	if err := cmd.Execute(); err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(1)
 	}
 }

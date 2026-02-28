@@ -33,6 +33,3 @@ go.work.sum
 
 # Built assets
 /boop
-
-# Temporary hack-y solution to quickly test functionality
-/deeply/nested/
